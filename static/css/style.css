@@ -48,9 +48,9 @@ aside div#user_meta ul li {
 aside div#user_meta ul li a {
   padding: 5px 15px 5px 15px;
   border: 3px solid #eeeeee;
-  border-radius: 15px;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
+  border-radius: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
   color: #999999;
 }
 main header {
@@ -161,12 +161,21 @@ main div#ending_message {
     border-right: #eeeeee 1px solid;
   }
   aside h2 {
-    margin: 10px 0 0 0;
+      margin: 10px 0 0 0;
+      text-align: center;
+  }
+  aside h3 {
+      margin: 10px 0 0 0;
+      text-align: center;
   }
   aside div#user_meta {
-    max-width: 192px;
+    max-width: 300px;
     text-align: right;
   }
+  aside div#user_meta p {
+    text-align: center;
+  }
+
   aside div#user_meta ul li {
     display: block;
   }
