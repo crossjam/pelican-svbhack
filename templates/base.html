@@ -23,7 +23,10 @@
   {% if FEED_ALL_RSS %}
   <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS" />
   {% endif %}
-
+  {% if FEED_ALL_JSON %}
+  <link rel="alternate" type="application/json" title="{{ SITENAME }} JSON Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_JSON }}" />
+  {% endif %}
+  
   {% block head %}
   {% endblock %}
 
