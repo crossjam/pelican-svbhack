@@ -15,6 +15,9 @@
   {% endif %}
   <div class="article_text">
     {{ article.summary }}
+    {% if article.has_summary %}
+    <p><a href="{{ SITEURL }}/{{ article.url }}">read more ...</a></p>
+    {% endif %}
   </div>
 </article>
 {% if not loop.last %}
