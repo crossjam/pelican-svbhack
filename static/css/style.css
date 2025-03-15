@@ -151,7 +151,7 @@ main div#ending_message {
   color: #999999;
   font-size: .6rem;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 512px) {
   aside {
     width: 25%;
     height: 100%;
@@ -159,12 +159,20 @@ main div#ending_message {
     top: 0;
     left: 0;
     border-right: #eeeeee 1px solid;
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #888 #f1f1f1; /* For Firefox */
+
   }
   aside h2 {
       margin: 10px 0 0 0;
       text-align: center;
   }
   aside h3 {
+      margin: 10px 0 0 0;
+      text-align: center;
+  }
+  aside h4 {
       margin: 10px 0 0 0;
       text-align: center;
   }
@@ -193,4 +201,22 @@ main div#ending_message {
   main header {
     border-top: 0;
   }
+}
+
+.archive-module {
+    margin-bottom: 2rem;
+}
+
+.archive-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.archive-list li {
+    margin-bottom: 0.5rem;
+}
+
+.archive-list .count {
+    color: #666;
+    font-size: 0.9em;
 }
