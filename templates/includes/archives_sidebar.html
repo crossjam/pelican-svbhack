@@ -1,21 +1,8 @@
-{% if dates %}
+{% if ARCHIVES_DATA %}
     <div id="user_meta">
         <h4>Archives</h4>
-        {% set dates_by_month = {} %}
-        
-        {# Group articles by year and month #}
-        {% for article in dates %}
-            {% set year_month = article.date.strftime('%Y/%m') %}
-            {% set month_name = article.date.strftime('%B %Y') %}
-            {% if year_month not in dates_by_month %}
-                {% set _ = dates_by_month.update({year_month: {'name': month_name, 'count': 1}}) %}
-            {% else %}
-                {% set _ = dates_by_month.update({year_month: {'name': month_name, 'count': dates_by_month[year_month]['count'] + 1}}) %}
-            {% endif %}
-        {% endfor %}
-
-        <ul >
-            {% for year_month, data in dates_by_month|dictsort|reverse %}
+        <ul>
+            {% for year_month, data in ARCHIVES_DATA %}
                 <li>
                     <a href="{{ SITEURL }}/{{ year_month }}/">
                         {{ data['name'] }}
