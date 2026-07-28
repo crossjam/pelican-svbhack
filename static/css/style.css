@@ -221,6 +221,10 @@ main div#ending_message {
     font-size: 0.9em;
 }
 
+.archive-all-years {
+    text-align: right;
+}
+
 @media screen and (max-width: 511px) {
   .archive-module {
     display: none;
