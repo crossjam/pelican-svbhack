@@ -12,6 +12,19 @@
                 </li>
             {% endfor %}
         </ul>
+        {% set past_years = ARCHIVE_YEARS_LIST | rejectattr('year', 'equalto', CURRENT_ARCHIVE_YEAR) | list %}
+        {% if past_years %}
+        <ul class="archive-list archive-years">
+            {% for year in past_years %}
+                <li>
+                    <a href="{{ SITEURL }}/{{ year.url }}">
+                        {{ year.year }}
+                        <span class="count">({{ year.count }})</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         <p><a href="{{ SITEURL }}/archives.html">All years &raquo;</a></p>
     </div>
 {% endif %}
