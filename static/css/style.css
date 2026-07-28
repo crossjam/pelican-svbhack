@@ -221,7 +221,7 @@ main div#ending_message {
     font-size: 0.9em;
 }
 
-.archive-all-years {
+#user_meta .archive-all-years {
     text-align: right;
 }
 
