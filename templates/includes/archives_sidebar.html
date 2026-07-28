@@ -1,15 +1,17 @@
-{% if ARCHIVES_DATA %}
-    <div id="user_meta">
-        <h4>Archives</h4>
-        <ul>
-            {% for year_month, data in ARCHIVES_DATA %}
+{% set current_year_data = ARCHIVE_YEARS.get(CURRENT_ARCHIVE_YEAR) if ARCHIVE_YEARS else None %}
+{% if current_year_data %}
+    <div id="user_meta" class="archive-module">
+        <h4>Archives: {{ current_year_data.year }}</h4>
+        <ul class="archive-list">
+            {% for month in current_year_data.months %}
                 <li>
-                    <a href="{{ SITEURL }}/{{ year_month }}/">
-                        {{ data['name'] }}
-                        <span class="count">({{ data['count'] }})</span>
+                    <a href="{{ SITEURL }}/{{ month.url }}">
+                        {{ month.name }} {{ current_year_data.year }}
+                        <span class="count">({{ month.count }})</span>
                     </a>
                 </li>
             {% endfor %}
         </ul>
+        <p><a href="{{ SITEURL }}/archives.html">All years &raquo;</a></p>
     </div>
 {% endif %}
